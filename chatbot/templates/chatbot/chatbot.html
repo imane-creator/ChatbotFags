@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot UI</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="{% static 'script.js' %}" defer></script>
+</head>
+<body>
+<div class="container">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>History</h2>
+        </div>
+        <button id="newChatBtn">Nouveau Chat</button>
+        <ul id="chatList" class="chat-list">
+
+        </ul>
+        <div class="settings">
+            <button>Quick Settings</button>
+        </div>
+    </aside>
+    <main class="chat-container">
+        <div class="chat-header">
+            <img src="{% static 'image.svg' %}" alt="Logo" class="header-logo">
+            <h1 class="title">Chatbot UI</h1>
+
+        </div>
+        <div id="chatbox" class="chatbox">
+
+        </div>
+        <form id="chatForm" class="user-input-form">
+            {% csrf_token %}
+            <input type="text" id="userInput" placeholder="Envoyer un message..." required />
+            <button type="submit">Envoyer</button>
+        </form>
+    </main>
+</div>
+</body>
+</html>
